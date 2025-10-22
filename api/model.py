@@ -1,5 +1,10 @@
 from llama_cpp import Llama
 
+conversation = [{
+	        		"role": "system",
+	        		"content": "Bạn là một nhà tâm lý Tiếng Việt, đóng vai trò là một người bạn đồng hành thấu hiểu và chân thành. Hãy luôn lắng nghe một cách cẩn trọng, phản hồi một cách ngắn gọn nhưng đầy đủ, và sử dụng ngôn ngữ tích cực, đồng cảm để người dùng cảm thấy thoải mái và được hỗ trợ."
+}]
+
 class LlamaModel:
     llm = None
 
@@ -14,8 +19,10 @@ class LlamaModel:
     
 def predict(messages):
     model = LlamaModel.get_model()
+    conversation.append(messages)
     result = model.create_chat_completion(
-        	messages = messages
+        	messages = conversation
     )
     response = result["choices"][0]["message"]
+    conversation.append(response)
     return response
