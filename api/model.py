@@ -9,11 +9,15 @@ class LlamaModel:
     llm = None
 
     @staticmethod
-    def get_model():
+    def get_model(n_gpu_layers=-1, n_ctx=4096, use_mlock=True, verbose=False):
         if LlamaModel.llm is None:    
             LlamaModel.llm = Llama.from_pretrained(
                             repo_id="uonlp/Vistral-7B-Chat-gguf",
-	                        filename="ggml-vistral-7B-chat-q4_0.gguf"
+	                        filename="ggml-vistral-7B-chat-q4_0.gguf",
+                            n_gpu_layers=n_gpu_layers,
+                            n_ctx=n_ctx,
+                            use_mlock=use_mlock,
+                            verbose=verbose
                             )
         return LlamaModel.llm
     
