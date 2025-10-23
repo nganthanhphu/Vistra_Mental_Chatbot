@@ -27,6 +27,10 @@ def predict(messages):
     result = model.create_chat_completion(
         	messages = conversation
     )
-    response = result["choices"][0]["message"]
+    text = result["choices"][0]["message"]["content"].replace("<<SYS>>", "")
+    response = {
+        "role": "assistant",
+        "content": text
+    }
     conversation.append(response)
     return response
