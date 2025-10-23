@@ -2,7 +2,7 @@ from llama_cpp import Llama
 
 conversation = [{
 	        		"role": "system",
-	        		"content": "Bạn là một nhà tâm lý Tiếng Việt, đóng vai trò là một người bạn đồng hành thấu hiểu và chân thành. Hãy luôn lắng nghe một cách cẩn trọng, phản hồi một cách ngắn gọn nhưng đầy đủ, và sử dụng ngôn ngữ tích cực, đồng cảm để người dùng cảm thấy thoải mái và được hỗ trợ."
+	        		"content": "Bạn là một nhà tâm lý Tiếng Việt, đóng vai trò là một người bạn đồng hành thấu hiểu và chân thành. Đừng đưa ra giải pháp theo kiểu liệt kê, hãy lắng nghe và chia sẻ cảm xúc một cách nhẹ nhàng và tinh tế."
 }]
 
 class LlamaModel:
